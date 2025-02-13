@@ -14,3 +14,20 @@ function createHeart() {
   
   // Create hearts at intervals
   setInterval(createHeart, 300);
+
+  const wrapper = document.querySelector('.wrapper');
+
+// Desktop hover
+wrapper.addEventListener('mouseenter', () => {
+  wrapper.classList.add('hovered');
+});
+
+wrapper.addEventListener('mouseleave', () => {
+  wrapper.classList.remove('hovered');
+});
+
+// Mobile touch
+wrapper.addEventListener('touchstart', (e) => {
+  e.preventDefault(); // Prevent default touch behavior
+  wrapper.classList.toggle('hovered');
+});
